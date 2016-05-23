@@ -265,8 +265,7 @@ public class ExtendedChoiceParameterDefinition extends ParameterDefinition {
 			if (   type.equals(PARAMETER_TYPE_MULTI_LEVEL_SINGLE_SELECT)
 				  || type.equals(PARAMETER_TYPE_MULTI_LEVEL_MULTI_SELECT))
 			{
-				final int valuesBetweenLevels = this.value.split(",").length;
-				
+				final int valuesBetweenLevels = this.value.split(",").length;				
 				Iterator it = jsonValues.iterator();
 				for (int i = 1; it.hasNext(); i++)
 				{
@@ -380,7 +379,7 @@ public class ExtendedChoiceParameterDefinition extends ParameterDefinition {
 					file_content=project.getProperty(propertyKey);
 				}
 				
-				file_content = "Select" + "," + file_content;
+				file_content = "All" + "," + file_content;
 					
 				String[] list_arr = file_content.split(",");
 				
@@ -594,86 +593,6 @@ public class ExtendedChoiceParameterDefinition extends ParameterDefinition {
 		return modedContent;
 	}
 
-	@Override
-	public String getType() {
-		return type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-	}
-	
-	public String getBindFieldName() {
-		return bindFieldName;
-	}
-	
-	public void setBindFieldName(String bindFieldName) {
-		this.bindFieldName = bindFieldName;
-	}
-	
-	public String getProjectName() {
-		return projectName;
-	}
-	
-	public void setProjectName(String projectName) {
-		this.projectName = projectName;
-	}
-	
-	public String getSvnUrl() {
-		return svnUrl;
-	}
-	
-	public void setSvnUrl(String svnUrl) {
-		this.svnUrl = svnUrl;
-	}
-	
-	public String getSvnUserName() {
-		return svnUserName;
-	}
-	
-	public void setSvnUserName(String svnUserName) {
-		this.svnUserName = svnUserName;
-	}
-	
-	public String getSvnPassword() {
-		return svnPassword;
-	}
-	
-	public void setSvnPassword(String svnPassword) {
-		this.svnPassword = svnPassword;
-	}
-
-	public String getEffectiveDefaultValue() {
-		return computeValue(defaultValue, defaultPropertyFile, defaultPropertyKey, projectName);
-	}
-
-	public String getDefaultValue() {
-		return defaultValue;
-	}
-
-	public void setDefaultValue(String defaultValue) {
-		this.defaultValue = defaultValue;
-	}
-
-	public String getPropertyFile() {
-		return propertyFile;
-	}
-
-	public void setPropertyFile(String propertyFile) {
-		this.propertyFile = propertyFile;
-	}
-
-	public String getDefaultPropertyKey() {
-		return defaultPropertyKey;
-	}
-
-	public void setDefaultPropertyKey(String defaultPropertyKey) {
-		this.defaultPropertyKey = defaultPropertyKey;
-	}
-
-	public String getEffectiveValue() {
-		return computeValue(value, propertyFile, propertyKey, projectName);
-	}
 	
 	private ArrayList<Integer> columnIndicesForDropDowns(String[] headerColumns)
 	{
@@ -822,6 +741,87 @@ public class ExtendedChoiceParameterDefinition extends ParameterDefinition {
 		*/
 		
 		return collapsedMap;
+	}
+	
+	@Override
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+	
+	public String getBindFieldName() {
+		return bindFieldName;
+	}
+	
+	public void setBindFieldName(String bindFieldName) {
+		this.bindFieldName = bindFieldName;
+	}
+	
+	public String getProjectName() {
+		return projectName;
+	}
+	
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+	}
+	
+	public String getSvnUrl() {
+		return svnUrl;
+	}
+	
+	public void setSvnUrl(String svnUrl) {
+		this.svnUrl = svnUrl;
+	}
+	
+	public String getSvnUserName() {
+		return svnUserName;
+	}
+	
+	public void setSvnUserName(String svnUserName) {
+		this.svnUserName = svnUserName;
+	}
+	
+	public String getSvnPassword() {
+		return svnPassword;
+	}
+	
+	public void setSvnPassword(String svnPassword) {
+		this.svnPassword = svnPassword;
+	}
+
+	public String getEffectiveDefaultValue() {
+		return computeValue(defaultValue, defaultPropertyFile, defaultPropertyKey, projectName);
+	}
+
+	public String getDefaultValue() {
+		return defaultValue;
+	}
+
+	public void setDefaultValue(String defaultValue) {
+		this.defaultValue = defaultValue;
+	}
+
+	public String getPropertyFile() {
+		return propertyFile;
+	}
+
+	public void setPropertyFile(String propertyFile) {
+		this.propertyFile = propertyFile;
+	}
+
+	public String getDefaultPropertyKey() {
+		return defaultPropertyKey;
+	}
+
+	public void setDefaultPropertyKey(String defaultPropertyKey) {
+		this.defaultPropertyKey = defaultPropertyKey;
+	}
+
+	public String getEffectiveValue() {
+		return computeValue(value, propertyFile, propertyKey, projectName);
 	}
 	
 	public String getValue() {
