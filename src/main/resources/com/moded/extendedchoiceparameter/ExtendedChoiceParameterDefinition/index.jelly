@@ -49,7 +49,7 @@
 		
 		foo.computeValue(file_name,file_key,src_name, function(t) {
 			response_data = t.responseObject();
-			parent_element.removeChild(parent_element.childNodes[ parent_element.childNodes.length - 1 ]);
+			parent_element.removeChild(parent_element.childNodes[ parent_element.childNodes.length - 2 ]);
 			parent_element.innerHTML = parent_element.innerHTML + response_data;
 			document.getElementById("spinnerImg_${it.name}").style.display = "none";
 					
