@@ -452,9 +452,7 @@ public class ExtendedChoiceParameterDefinition extends ParameterDefinition {
 					result+="</script>";
 				
 							
-				}
-				
-				
+				}				
 				return result;
 			}
 			catch(Exception e) {
